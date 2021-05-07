@@ -2,7 +2,11 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
-
+/**
+ * Opens a window on which the DrawingSurface is created.
+ * @author Harshith Pothula
+ *
+ */
 public class Main {
 
 	// MAIN - Typically in a class by itself, but included here for simplicity.

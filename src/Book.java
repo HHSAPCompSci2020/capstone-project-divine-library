@@ -4,5 +4,6 @@
  *
  */
 public class Book extends ItemTemplate{
-
+	
+	private int numPages;
 }

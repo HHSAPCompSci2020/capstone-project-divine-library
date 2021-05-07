@@ -5,4 +5,5 @@
  */
 public class Magazine extends ItemTemplate{
 
+	private int edition;
 }

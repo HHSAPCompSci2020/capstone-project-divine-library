@@ -4,10 +4,15 @@ import javax.swing.JFrame;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import processing.event.MouseEvent;
-
+/**
+ * The surface on which the Library can be accessed (Graphic Interface).
+ * @author Harshith Pothula
+ *
+ */
 public class DrawingSurface extends PApplet {
 
-		
+	private Library library;	
+	
 	// CONSTRUCTOR - Initialize any added fields here.
 	public DrawingSurface() 
 	{

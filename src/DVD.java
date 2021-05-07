@@ -5,4 +5,5 @@
  */
 public class DVD extends ItemTemplate{
 
+	private int runtime;
 }
