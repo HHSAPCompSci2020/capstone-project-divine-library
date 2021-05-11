@@ -46,7 +46,7 @@ public class Shelf {
 						String line = in.nextLine();
 						for(int i = 0; i < line.length(); i++)
 							if (count < items.length && i < items[count].length)
-								items[i][count] = line.charAt(i);
+//								items[i][count] = line.charAt(i);
 
 						count++;
 					}
