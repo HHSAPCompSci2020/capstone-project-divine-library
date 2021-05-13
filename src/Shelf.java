@@ -11,26 +11,25 @@ import java.util.Scanner;
  */
 public class Shelf {
 	
-	private ItemTemplate[][] books, dvds, magazines;
+	private ArrayList<ItemTemplate> books, dvds, magazines;
 	
 	public Shelf() {
-		books = new ItemTemplate[5][5];
-		dvds = new ItemTemplate[5][5];
-		magazines = new ItemTemplate[5][5];
+		books = new ArrayList<ItemTemplate>();
+		dvds = new ArrayList<ItemTemplate>();
+		magazines = new ArrayList<ItemTemplate>();
 	}
 	
 	public Shelf(String bookfile, String dvdfile, String magazinefile) {
-		//right now preset to 5,5 might change later
-		books = new ItemTemplate[5][5];
-		dvds = new ItemTemplate[5][5];
-		magazines = new ItemTemplate[5][5];
-		this.readData(bookfile, books);
-		this.readData(dvdfile, dvds);
-		this.readData(magazinefile, magazines);
+		books = new ArrayList<ItemTemplate>();
+		dvds = new ArrayList<ItemTemplate>();
+		magazines = new ArrayList<ItemTemplate>();		
+		this.readData(bookfile, books, 1);
+		this.readData(dvdfile, dvds, 2);
+		this.readData(magazinefile, magazines, 3);
 	}
 	
 	
-	public void readData (String filename, ItemTemplate[][] items) {
+	private void readData (String filename, ArrayList<ItemTemplate> items, int type) {
 		File dataFile = new File(filename);
 
 		if (dataFile.exists()) {
@@ -44,10 +43,24 @@ public class Shelf {
 					
 					while (in.hasNext()) {
 						String line = in.nextLine();
-						for(int i = 0; i < line.length(); i++)
-							if (count < items.length && i < items[count].length)
-//								items[i][count] = line.charAt(i);
+						String title = line.substring(0, line.indexOf(" "));
+						line = line.substring(line.indexOf(" ") + 1);
+						String author = line.substring(0, line.indexOf(" "));
+						String misc = line.substring(line.indexOf(" ") + 1);
+						if (type == 1) {
+							books.add(new Book(title, author, misc));
+							System.out.println(books.get(0));
+						}
+						else if (type == 2) {
+							dvds.add(new DVD(title, author, misc));
+							System.out.println(dvds.get(0));
 
+						}
+						else if (type == 3) {
+							magazines.add(new Magazine(title, author, misc));
+							System.out.println(magazines.get(0));
+
+						}
 						count++;
 					}
 
@@ -61,6 +74,28 @@ public class Shelf {
 		} else {
 			throw new IllegalArgumentException("Data file " + filename + " does not exist.");
 		}
+	}
+	
+	/**
+	 * Returns an ArrayList containing books
+	 */
+	public ArrayList<ItemTemplate> getBookShelf(){
+		return books;
+	}
+	
+	/**
+	 * Returns an ArrayList containing DVDs
+	 */
+	public ArrayList<ItemTemplate> getDVDShelf(){
+		return dvds;
+	}
+	
+	/**
+	 * Returns an ArrayList containing Magazines and Newspapers
+	 * @return
+	 */
+	public ArrayList<ItemTemplate> getMagazineShelf(){
+		return magazines;
 	}
 }
 

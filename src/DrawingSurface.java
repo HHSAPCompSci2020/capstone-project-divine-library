@@ -16,6 +16,7 @@ public class DrawingSurface extends PApplet {
 	// CONSTRUCTOR - Initialize any added fields here.
 	public DrawingSurface() 
 	{
+		library = new Library ("BookList.txt","DvdList.txt", "MagazineList.txt", "MemberList.txt");
 	}
 	
 	
@@ -34,7 +35,7 @@ public class DrawingSurface extends PApplet {
 		
 		fill(0);
 		textSize(10);
-		text("TEST",10,10);
+		text(library.getShelves().getBookShelf().get(0).toString(),10,10);
 		
 		popStyle();
 
