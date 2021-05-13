@@ -10,16 +10,13 @@ import processing.event.MouseEvent;
  * @author Harshith Pothula
  *
  */
-public class DrawingSurface extends PApplet {
+public class DrawingSurfaceShelves extends PApplet {
 
 	private Library library;	
-	private DrawingSurfaceShelves shelves;
-	private DrawingSurfaceMembers list;
-	
+		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurface() 
+	public DrawingSurfaceShelves() 
 	{
-		library = new Library ("BookList.txt","DvdList.txt", "MagazineList.txt", "MemberList.txt");
 	}
 	
 	
@@ -44,5 +41,5 @@ public class DrawingSurface extends PApplet {
 
 	}
 	
-
+	
 }
