@@ -42,46 +42,5 @@ public class DrawingSurfaceMembers extends PApplet {
 
 	}
 	
-	public void mousePressed() {
-//		float x = super.mouseX * (DRAWING_WIDTH/(float)width);
-//		float y = mouseY * (DRAWING_HEIGHT/(float)height);
-//		
-//		for (int i = 0; i < boxes.length; i++) {
-//			Rectangle e = boxes[i];
-//			if (e.contains(x,y)) {
-//				if (m != null)
-//					m.setColor(colors[i]);
-//			}
-//				
-//		}
-	}
 	
-	public void keyPressed() {
-//		if (super.keyCode == KeyEvent.VK_SPACE && m == null) {
-//
-//			m = new DrawingSurface2();
-//			
-//			PApplet.runSketch(new String[]{""}, m);
-//			PSurfaceAWT surf2 = (PSurfaceAWT) m.getSurface();
-//			PSurfaceAWT.SmoothCanvas canvas2 = (PSurfaceAWT.SmoothCanvas) surf2.getNative();
-//			JFrame window2 = (JFrame)canvas2.getFrame();
-//
-//			window2.setBounds(500,50,800, 600);
-//			window2.setMinimumSize(new Dimension(100,100));
-//			window2.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-//			window2.setResizable(true);
-//			
-//			canvas2.requestFocus();
-//			
-//			
-//		} else if (super.keyCode == KeyEvent.VK_SPACE) {
-//			
-//			PSurfaceAWT surf2 = (PSurfaceAWT) m.getSurface();
-//			PSurfaceAWT.SmoothCanvas canvas2 = (PSurfaceAWT.SmoothCanvas) surf2.getNative();
-//			JFrame window2 = (JFrame)canvas2.getFrame();
-//			
-//			window2.setVisible(!window2.isVisible());
-//			
-//		}
-	}
 }
