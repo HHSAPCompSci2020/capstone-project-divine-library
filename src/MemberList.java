@@ -108,6 +108,10 @@ public class MemberList {
 		return "error";
 	}
 	
+	public ArrayList<Member> getMemberList(){
+		return members;
+	}
+	
 	private  void readData (String filename, ArrayList<Member> members) {
 		File dataFile = new File(filename);
 
