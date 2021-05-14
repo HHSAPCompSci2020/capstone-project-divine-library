@@ -22,6 +22,78 @@ public class MemberList {
 		this.readData(memberfile,  members);
 	}
 	
+	/**
+	 * add a member to the member list
+	 */
+	public void addMember (Member member) {
+		members.add(member);
+	}
+	
+	/**
+	 * remove a member from the member list
+	 */
+	public void removeMember (int index) {
+		members.remove(index);
+	}
+	
+	public void changeMemberID (int ID, String name, int newID) {
+		int index = 0;
+		for (Member m : members) {
+			if (m.getID() == ID) {
+				if (name == m.getName()) {
+					Member change = members.get(index);
+					change.setID(newID);
+				}
+			}
+		}
+	}
+	
+	public void changeMemberName (int ID, String oldName, String newName) {
+		int index = 0;
+		for (Member m : members) {
+			if (m.getID() == ID) {
+				if (oldName == m.getName()) {
+					Member change = members.get(index);
+					change.setName(newName);
+				}
+			}
+		}
+	}
+	
+	public String addBorrowedItem (int ID, String oldName, ItemTemplate item) {
+		int index = 0;
+		for (Member m : members) {
+			if (m.getID() == ID) {
+				if (oldName == m.getName()) {
+					Member change = members.get(index);
+					if (change.getArrayList().size() == 10) {
+						return "sorry, but you have reached the borrowed limit";
+					}
+					change.addBorrow(item);
+					return change.getList();
+				}
+			}
+		}
+		return "error";
+	}
+	
+	public String returned (int ID, String oldName, ItemTemplate item) {
+		int index = 0;
+		for (Member m : members) {
+			if (m.getID() == ID) {
+				if (oldName == m.getName()) {
+					Member change = members.get(index);
+					if (change.getArrayList().size() > 0 || !change.getArrayList().contains(item)) {
+						return "you did not borrow this item.";  
+					}
+					change.returned(item);
+					return change.getList();
+				}
+			}
+		}
+		return "error";
+	}
+	
 	private  void readData (String filename, ArrayList<Member> members) {
 		File dataFile = new File(filename);
 
