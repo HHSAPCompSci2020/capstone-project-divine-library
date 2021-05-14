@@ -49,16 +49,13 @@ public class Shelf {
 						String misc = line.substring(line.indexOf(" ") + 1);
 						if (type == 1) {
 							books.add(new Book(title, author, misc));
-							System.out.println(books.get(0));
 						}
 						else if (type == 2) {
 							dvds.add(new DVD(title, author, misc));
-							System.out.println(dvds.get(0));
 
 						}
 						else if (type == 3) {
 							magazines.add(new Magazine(title, author, misc));
-							System.out.println(magazines.get(0));
 
 						}
 						count++;

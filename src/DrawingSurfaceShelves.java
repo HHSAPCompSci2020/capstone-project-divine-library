@@ -1,6 +1,8 @@
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
@@ -12,11 +14,12 @@ import processing.event.MouseEvent;
  */
 public class DrawingSurfaceShelves extends PApplet {
 
-	private Library library;	
+	private ArrayList<ItemTemplate> items;	
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceShelves() 
+	public DrawingSurfaceShelves(ArrayList<ItemTemplate> list)
 	{
+		items = list;
 	}
 	
 	
@@ -33,10 +36,7 @@ public class DrawingSurfaceShelves extends PApplet {
 		background(255);
 		pushStyle();
 		
-		fill(0);
-		textSize(10);
-		text(library.getShelves().getBookShelf().get(0).toString(),10,10);
-		
+			
 		popStyle();
 
 	}

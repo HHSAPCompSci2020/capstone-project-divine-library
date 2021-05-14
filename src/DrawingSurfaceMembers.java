@@ -1,9 +1,12 @@
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
+import processing.core.PImage;
 import processing.event.MouseEvent;
 /**
  * The surface on which the Library can be accessed (Graphic Interface).
@@ -12,12 +15,12 @@ import processing.event.MouseEvent;
  */
 public class DrawingSurfaceMembers extends PApplet {
 
-	private Library library;	
+	private ArrayList<ItemTemplate> list;	
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceMembers(Library l) 
+	public DrawingSurfaceMembers(ArrayList<ItemTemplate> l) 
 	{
-		library = l;
+		list = l;
 	}
 	
 	
@@ -25,8 +28,7 @@ public class DrawingSurfaceMembers extends PApplet {
 	// Add processing methods here. See the documentation at processing.org for reference.
 	public void setup() 
 	{
-	
-	}
+			}
 	
 	
 	public void draw()
@@ -34,9 +36,6 @@ public class DrawingSurfaceMembers extends PApplet {
 		background(255);
 		pushStyle();
 		
-		fill(0);
-		textSize(10);
-		text(library.getShelves().getBookShelf().get(0).toString(),10,10);
 		
 		popStyle();
 
