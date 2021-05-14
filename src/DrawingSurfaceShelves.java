@@ -14,12 +14,12 @@ import processing.event.MouseEvent;
  */
 public class DrawingSurfaceShelves extends PApplet {
 
-	private ArrayList<ItemTemplate> items;	
+	private ItemTemplate[][] items;	
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceShelves(ArrayList<ItemTemplate> list)
+	public DrawingSurfaceShelves(ItemTemplate[][] itemTemplates)
 	{
-		items = list;
+		items = itemTemplates;
 	}
 	
 	
