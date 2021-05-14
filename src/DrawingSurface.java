@@ -53,13 +53,14 @@ public class DrawingSurface extends PApplet {
 		text("Books",                        (float) (width/6.0), (float) (height/10.0));
 		text("DVDs",                         (float) (width/2.0), (float) (height/10.0));
 		text("Newspapers \n& Magazines", (float) (5*(width/6.0)), (float) (height/10.0));
+		text("Members",                      (float) (width/2), (float) (height/4 + height/3 + height/8));
 		    
 		noFill();
 		strokeWeight(3);
 		rect((float) 0,                 (float) (height/4.0),  (float)(width/3.0), (float)(height/3.0));
 		rect((float)(width/3.0),        (float) (height/4.0),  (float)(width/3.0), (float)(height/3.0));
 		rect((float) (2.0*(width/3.0)), (float) (height/4.0),  (float)(width/3.0), (float)(height/3.0));
-		
+		rect((float) 0,                 (float) (height/4 + height/3), (float) width, (float) (height/4));
 		popStyle();
 		
 	}
@@ -76,6 +77,9 @@ public class DrawingSurface extends PApplet {
 		}
 		else if ((x>(2*width/3) && (y>(height/5 + (2*(height/3))) && (x<width) && (y<height/5 +height/3 )))){
 			s = new DrawingSurfaceShelves(library.getShelves().getMagazineShelf());
+		}
+		else if ((x > 0 ) && (y > (height/4 + height/3) && (x < width) && (y < height/4))) {
+//			m = new DrawingSurfaceMembers(library.getMemberList());
 		}
 		
 		if (s != null) {
