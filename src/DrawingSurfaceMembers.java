@@ -9,7 +9,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.event.MouseEvent;
 /**
- * The surface on which the Library can be accessed (Graphic Interface).
+ * Graphical representation of the Members. Has a list of items.
  * @author Harshith Pothula
  *
  */

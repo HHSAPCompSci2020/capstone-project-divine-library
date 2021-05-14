@@ -74,14 +74,14 @@ public class Shelf {
 	}
 	
 	/**
-	 * Returns an ArrayList containing books
+	 * @return an ArrayList containing books
 	 */
 	public ItemTemplate[][] getBookShelf(){
 		return convertToArray(books);
 	}
 	
 	/**
-	 * Returns an ArrayList containing DVDs
+	 * @return an ArrayList containing DVDs
 	 */
 	public ItemTemplate[][] getDVDShelf(){
 		return convertToArray(dvds);

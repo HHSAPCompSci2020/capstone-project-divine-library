@@ -49,14 +49,14 @@ public class ItemTemplate {
 	}
 	
 	/**
-	 * Returns the Title of the item
+	 * @return the Title of the item
 	 */
 	public String getTitle() {
 		return title;
 	}
 	
 	/***
-	 * Returns the Author/Publisher of the item
+	 * @return the Author/Publisher of the item
 	 */
 	public String getAuthor() {
 		return author;

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Represents a member of the Library. Has a name and library ID. You can see the # of items that can be borrowed (List).
+ * Represents a member of the Library. Has a name, library ID, and list of borrowed items.
  * @author James Jian
  * @author Harshith Pothula
  * @author Caden Pun
@@ -36,7 +36,7 @@ public class Member {
 	}
 
 	/**
-	 * Returns a String of the items borrowed by the member
+	 * @return a String of the items borrowed by the member
 	 */
 	public String getList() {
 		String list = "";
@@ -46,6 +46,9 @@ public class Member {
 		return list;
 	}
 	
+	/**
+	 * @return the borrowed items
+	 */
 	public ArrayList<ItemTemplate> getArrayList () {
 		return borrowed;
 	}
@@ -72,6 +75,7 @@ public class Member {
 	}
 	/**
 	 * remove an item from the member's borrowed list
+	 * @return String stating if you successfully returned an item or did not borrow the item
 	 */
 	public String returned (ItemTemplate item) {
 		if (borrowed.contains(item)) {

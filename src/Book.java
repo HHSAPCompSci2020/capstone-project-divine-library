@@ -24,12 +24,15 @@ public class Book extends ItemTemplate{
 	}
 	
 	/**
-	 * Returns the total number of pages in the book
+	 * @return the total number of pages in the book
 	 */
 	public String getLength() {
 		return numPages;
 	}
 	
+	/**
+	 * @return String of the book's title, author, length, and availability
+	 */
 	public String toString() {
 		return "Title: " + getTitle() + 
 			   "\nAuthor: " + getAuthor() + 

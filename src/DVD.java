@@ -24,12 +24,15 @@ public class DVD extends ItemTemplate{
 	}
 	
 	/**
-	 * Returns runtime in the format hh:mm:ss
+	 * @return runtime in the format hh:mm:ss
 	 */
 	public String getRuntime() {
 		return runtime;
 	}
 	
+	/**
+	 * @return String of the book's title, author, length, and availability
+	 */
 	public String toString() {
 		return "Title: " + getTitle() + 
 			   "\nPublisher: " + getAuthor() + 

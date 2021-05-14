@@ -24,12 +24,15 @@ public class Magazine extends ItemTemplate{
 	}
 	
 	/**
-	 * Returns the item's edition in the format mm/yyyy
+	 * @return the item's edition in the format mm/yyyy
 	 */
 	public String getEdition() {
 		return edition;
 	}
 	
+	/**
+	 * @return String of the book's title, author, length, and availability
+	 */
 	public String toString() {
 		return "Title: " + getTitle() + 
 				"\nPublisher: " + getAuthor() + 

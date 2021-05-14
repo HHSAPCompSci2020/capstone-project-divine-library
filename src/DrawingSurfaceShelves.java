@@ -8,7 +8,7 @@ import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import processing.event.MouseEvent;
 /**
- * The surface on which the Library can be accessed (Graphic Interface).
+ * Graphical representation of the shelves, has a list of items on these shelves.
  * @author Harshith Pothula
  *
  */

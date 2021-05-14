@@ -60,6 +60,13 @@ public class MemberList {
 		}
 	}
 	
+	/**
+	 * Adds a borrowed item to a member
+	 * @param ID
+	 * @param oldName
+	 * @param item
+	 * @return A string stating that a member has reached the borrowing limit if they have 10 borrowed items, a String of the items borrowed by the member, an error message is returned if something is wrong
+	 */
 	public String addBorrowedItem (int ID, String oldName, ItemTemplate item) {
 		int index = 0;
 		for (Member m : members) {
@@ -77,6 +84,13 @@ public class MemberList {
 		return "error";
 	}
 	
+	/**
+	 * Returns an item
+	 * @param ID
+	 * @param oldName
+	 * @param item
+	 * @return A string stating that a member did not borrow that item, a String of the items borrowed by the member, an error message is returned if something is wrong
+	 */
 	public String returned (int ID, String oldName, ItemTemplate item) {
 		int index = 0;
 		for (Member m : members) {

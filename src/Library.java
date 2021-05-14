@@ -17,14 +17,14 @@ public class Library {
 	}
 	
 	/**
-	 * Returns the shelves
+	 * @return the shelves
 	 */
 	public Shelf getShelves() {
 		return shelf;
 	}
 	
 	/**
-	 * Returns the list of members
+	 * @return the list of members
 	 */
 	public MemberList getMemberList() {
 		return list;
