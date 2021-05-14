@@ -35,7 +35,9 @@ public class DrawingSurfaceShelves extends PApplet {
 	{
 		background(255);
 		pushStyle();
-		
+		fill(0);
+		textSize(25);
+		text("Items to be added", 10, 100);
 			
 		popStyle();
 

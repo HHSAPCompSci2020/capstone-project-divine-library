@@ -24,6 +24,7 @@ public class MemberList {
 	
 	/**
 	 * add a member to the member list
+	 * @param member
 	 */
 	public void addMember (Member member) {
 		members.add(member);
@@ -31,11 +32,18 @@ public class MemberList {
 	
 	/**
 	 * remove a member from the member list
+	 * @param index
 	 */
 	public void removeMember (int index) {
 		members.remove(index);
 	}
 	
+	/**
+	 * 
+	 * @param ID
+	 * @param name
+	 * @param newID
+	 */
 	public void changeMemberID (int ID, String name, int newID) {
 		int index = 0;
 		for (Member m : members) {
@@ -48,6 +56,12 @@ public class MemberList {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param ID
+	 * @param oldName
+	 * @param newName
+	 */
 	public void changeMemberName (int ID, String oldName, String newName) {
 		int index = 0;
 		for (Member m : members) {

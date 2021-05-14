@@ -15,12 +15,12 @@ import processing.event.MouseEvent;
  */
 public class DrawingSurfaceMembers extends PApplet {
 
-	private ArrayList<ItemTemplate> list;	
+	private ArrayList<Member> list;	
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceMembers(ArrayList<ItemTemplate> l) 
+	public DrawingSurfaceMembers(ArrayList<Member> arrayList) 
 	{
-		list = l;
+		list = arrayList;
 	}
 	
 	
@@ -35,7 +35,9 @@ public class DrawingSurfaceMembers extends PApplet {
 	{
 		background(255);
 		pushStyle();
-		
+		fill(255);
+		textSize(25);
+		text(list.get(0).toString(), 10, 10);
 		
 		popStyle();
 

@@ -65,26 +65,42 @@ public class DrawingSurface extends PApplet {
 		
 	}
 	
+	
+	
 	public void mousePressed() {
 		float x = mouseX;
 		float y = mouseY;
 		
-		if((x>0) && (y>height/4) && (x<width/3) && (y<(height/5 +height/3))) {
+		if      (x>0          && y>height/4                   && x<width/3      && y<height/4 +height/3) {
 			s = new DrawingSurfaceShelves(library.getShelves().getBookShelf());
 		}
-		else if ((x>width/3) && (y>(height/5 + height/3) && (x < (2*width/3)) && (y<(height/5 +height/3)))) {
+		 if (x>width/3    && y>height/4 + height/3       && x < (2*width/3) && y<(height/4 +height/3)) {
 			s = new DrawingSurfaceShelves(library.getShelves().getDVDShelf());
 		}
-		else if ((x>(2*width/3) && (y>(height/5 + (2*(height/3))) && (x<width) && (y<height/5 +height/3 )))){
+		 if (x>(2*width/3) && y > height/4 + (2*(height/3)) &&  x<width        && y<height/4 +height/3){
 			s = new DrawingSurfaceShelves(library.getShelves().getMagazineShelf());
 		}
-		else if ((x > 0 ) && (y > (height/4 + height/3) && (x < width) && (y < height/4))) {
-//			m = new DrawingSurfaceMembers(library.getMemberList());
+		 if (x > 0       && y > height/4 + height/3    && x < width      && y < height/4) {
+			m = new DrawingSurfaceMembers(library.getMemberList().getMemberList());
 		}
 		
 		if (s != null) {
 			PApplet.runSketch(new String[]{""}, s);
 			PSurfaceAWT surf2 = (PSurfaceAWT) s.getSurface();
+			PSurfaceAWT.SmoothCanvas canvas2 = (PSurfaceAWT.SmoothCanvas) surf2.getNative();
+			JFrame window2 = (JFrame)canvas2.getFrame();
+
+			window2.setBounds(500,50,800, 600);
+			window2.setMinimumSize(new Dimension(100,100));
+			window2.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+			window2.setResizable(true);
+			canvas2.requestFocus();
+
+		}
+		
+		if (m != null) {
+			PApplet.runSketch(new String[]{""}, m);
+			PSurfaceAWT surf2 = (PSurfaceAWT) m.getSurface();
 			PSurfaceAWT.SmoothCanvas canvas2 = (PSurfaceAWT.SmoothCanvas) surf2.getNative();
 			JFrame window2 = (JFrame)canvas2.getFrame();
 

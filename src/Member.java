@@ -55,6 +55,7 @@ public class Member {
 	
 	/**
 	 * change the member's id
+	 * @param newID
 	 */
 	public void setID (int newID) {
 		ID = newID;
@@ -62,6 +63,7 @@ public class Member {
 	
 	/**
 	 * change the member's name
+	 * @param newName
 	 */
 	public void setName (String newName) {
 		name = newName;
@@ -69,12 +71,14 @@ public class Member {
 	
 	/**
 	 * add an item to the member's borrowed list
+	 * @param item
 	 */
 	public void addBorrow (ItemTemplate item) {
 		borrowed.add(item);
 	}
 	/**
 	 * remove an item from the member's borrowed list
+	 * @param item
 	 * @return String stating if you successfully returned an item or did not borrow the item
 	 */
 	public String returned (ItemTemplate item) {
@@ -88,6 +92,7 @@ public class Member {
 	
 	/**
 	 * gives the ID of the member
+	 * @return
 	 */
 	public int getID () {
 		return ID;
@@ -95,6 +100,7 @@ public class Member {
 	
 	/**
 	 * gives the name of the member
+	 * @return 
 	 */
 	public String getName () {
 		return name;
