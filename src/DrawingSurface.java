@@ -14,13 +14,10 @@ import processing.event.MouseEvent;
 public class DrawingSurface extends PApplet {
 
 	private Library library;	
-<<<<<<< Updated upstream
 	private DrawingSurfaceShelves shelves;
 	private DrawingSurfaceMembers list;
-=======
 	private DrawingSurfaceShelves s;
 	private DrawingSurfaceMembers m;
->>>>>>> Stashed changes
 	private PImage book, cd, mag;
 
 	// CONSTRUCTOR - Initialize any added fields here.
