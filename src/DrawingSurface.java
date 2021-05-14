@@ -14,7 +14,7 @@ import processing.event.MouseEvent;
 public class DrawingSurface extends PApplet {
 
 	private Library library;	
-	private DrawingSurfaceShelves m;
+	private DrawingSurfaceShelves shelves;
 	private DrawingSurfaceMembers list;
 	private PImage book, cd, mag;
 
