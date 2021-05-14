@@ -100,7 +100,9 @@ public class Shelf {
 		
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < a[0].length; j++) {
-				a[i][j] = items.get(j + i * 5);
+				if (items.size() - 1 > j + i * 5) {
+					a[i][j] = items.get(j + i * 5);
+				}
 			}
 		}
 		
