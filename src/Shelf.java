@@ -76,23 +76,35 @@ public class Shelf {
 	/**
 	 * Returns an ArrayList containing books
 	 */
-	public ArrayList<ItemTemplate> getBookShelf(){
-		return books;
+	public ItemTemplate[][] getBookShelf(){
+		return convertToArray(books);
 	}
 	
 	/**
 	 * Returns an ArrayList containing DVDs
 	 */
-	public ArrayList<ItemTemplate> getDVDShelf(){
-		return dvds;
+	public ItemTemplate[][] getDVDShelf(){
+		return convertToArray(dvds);
 	}
 	
 	/**
 	 * Returns an ArrayList containing Magazines and Newspapers
 	 * @return
 	 */
-	public ArrayList<ItemTemplate> getMagazineShelf(){
-		return magazines;
+	public ItemTemplate[][] getMagazineShelf(){
+		return convertToArray(magazines);
+	}
+
+	private ItemTemplate[][] convertToArray(ArrayList<ItemTemplate> items) {
+		ItemTemplate[][] a = new ItemTemplate[5][5];
+		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[0].length; j++) {
+				a[i][j] = items.get(j + i * 5);
+			}
+		}
+		
+		return a;
 	}
 }
 
