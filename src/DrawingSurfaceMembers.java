@@ -57,15 +57,14 @@ public class DrawingSurfaceMembers extends PApplet {
 		float y = mouseY;
 		Member m = null;
 		
-//		for (int i = 0; i < s; i++) {
-//			if (y > i*(height/x) && y < (i*(height/x)) +(i*(height/x))) {
-//				if (m == null) {
-//					m = list.get(i);
-//				}
-//			}
-//		}
+		for (int i = 0; i < s; i++) {
+			if (m == null) {
+			if (y > i*(height/s) && y < (i+1)*(height/s)) {
+					m = list.get(i);
+				}
+			}
+		}
 		
-		m = list.get(0);
 		if (m != null) {
 			JOptionPane.showMessageDialog(null, m.toString());
 		}
