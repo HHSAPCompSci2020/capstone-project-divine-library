@@ -40,6 +40,10 @@ public class ItemTemplate {
 			return "No";
 	}
 	
+	public boolean getStatus() {
+		return available;
+	}
+	
 	/**
 	 * Sets availability to the given value
 	 * @param a availability of the item

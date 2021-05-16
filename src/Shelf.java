@@ -98,11 +98,16 @@ public class Shelf {
 	private ItemTemplate[][] convertToArray(ArrayList<ItemTemplate> items) {
 		ItemTemplate[][] a = new ItemTemplate[5][5];
 		
+		int n = 0;
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < a[0].length; j++) {
-				if (items.size() - 1 > j + i * 5) {
-					a[i][j] = items.get(j + i * 5);
+				if (items.size() > n) {
+					a[j][i] = items.get(n);
 				}
+				else {
+					a[j][i] = new ItemTemplate();
+				}
+				n++;
 			}
 		}
 		

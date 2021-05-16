@@ -71,16 +71,16 @@ public class DrawingSurface extends PApplet {
 		float x = mouseX;
 		float y = mouseY;
 		
-		if      (x>0          && y>height/4                   && x<width/3      && y<height/4 +height/3) {
-			s = new DrawingSurfaceShelves(library.getShelves().getBookShelf());
+		if (x>0          && y>height/4                   && x<width/3      && y<height/4 +height/3) {
+			s = new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library);
 		}
-		 if (x>width/3    && y>height/4 + height/3       && x < (2*width/3) && y<(height/4 +height/3)) {
-			s = new DrawingSurfaceShelves(library.getShelves().getDVDShelf());
+		 if (x>width/3    && y>height/4        && x < (2*width/3) && y<(height/4 +height/3)) {
+			s = new DrawingSurfaceShelves(library.getShelves().getDVDShelf(), library);
 		}
-		 if (x>(2*width/3) && y > height/4 + (2*(height/3)) &&  x<width        && y<height/4 +height/3){
-			s = new DrawingSurfaceShelves(library.getShelves().getMagazineShelf());
+		 if (x>(2*width/3) && y > height/4  &&  x<width        && y<height/4 +height/3){
+			s = new DrawingSurfaceShelves(library.getShelves().getMagazineShelf(), library);
 		}
-		 if (x > 0       && y > height/4 + height/3    && x < width      && y < height/4) {
+		 if (x > 0       && y > height/4 + height/3    && x < width      && y < height/2 + height/3) {
 			m = new DrawingSurfaceMembers(library.getMemberList().getMemberList());
 		}
 		
@@ -92,7 +92,7 @@ public class DrawingSurface extends PApplet {
 
 			window2.setBounds(500,50,800, 600);
 			window2.setMinimumSize(new Dimension(100,100));
-			window2.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+			window2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			window2.setResizable(true);
 			canvas2.requestFocus();
 
@@ -106,7 +106,7 @@ public class DrawingSurface extends PApplet {
 
 			window2.setBounds(500,50,800, 600);
 			window2.setMinimumSize(new Dimension(100,100));
-			window2.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+			window2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			window2.setResizable(true);
 			canvas2.requestFocus();
 

@@ -1,1 +1,7 @@
-Harry_Potter_And_The_Philosopher's_Stone J.K._Rowling 336
+Harry_Potter_and_the_Philosopher's_Stone J.K._Rowling 336
+Harry_Potter_and_the_Chamber_of_Secrets J.K._Rowling 368
+Harry_Potter_and_the_Prisoner_of_Azkaban J.K._Rowling 464
+Harry_Potter_and_the_Goblet_of_Fire J.K._Rowling 734
+Harry_Potter_and_the_Order_of_the_Phoenix J.K._Rowling 870
+Harry_Potter_and_the_Half-Blood_Prince J.K._Rowling 652
+Harry_Potter_and_the_Deathly_Hallows J.K._Rowling 759

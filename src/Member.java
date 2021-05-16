@@ -9,12 +9,11 @@ import java.util.ArrayList;
  */
 public class Member {
 
-	private int ID;
-	private String name;
+	private String name, ID;
 	private ArrayList<ItemTemplate> borrowed;
 	
 	public Member() {
-		ID = -1;
+		ID = "";
 		name = "";
 		borrowed = new ArrayList<ItemTemplate>();
 	}
@@ -25,7 +24,7 @@ public class Member {
 	 * @param name Name
 	 * @param borrowList List of items the member currently borrowed by the member
 	 */
-	public Member(int ID, String name, ArrayList<ItemTemplate> borrowList) {
+	public Member(String ID, String name, ArrayList<ItemTemplate> borrowList) {
 		this.ID = ID;
 		this.name = name.replace('_', ' ');
 		borrowed = borrowList;
@@ -41,7 +40,7 @@ public class Member {
 	public String getList() {
 		String list = "";
 		for (int i = 0; i < borrowed.size(); i++) {
-			list += borrowed.get(i) + ", ";
+			list += borrowed.get(i).getTitle() + ", ";
 		}
 		return list;
 	}
@@ -57,7 +56,7 @@ public class Member {
 	 * change the member's id
 	 * @param newID
 	 */
-	public void setID (int newID) {
+	public void setID (String newID) {
 		ID = newID;
 	}
 	
@@ -94,7 +93,7 @@ public class Member {
 	 * gives the ID of the member
 	 * @return
 	 */
-	public int getID () {
+	public String getID () {
 		return ID;
 	}
 	

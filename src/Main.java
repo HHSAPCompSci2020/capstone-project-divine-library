@@ -18,7 +18,7 @@ public class Main {
 		JFrame window = (JFrame)canvas.getFrame();
 		window.setSize(600, 400);
 		window.setMinimumSize(new Dimension(100,100));
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		window.setResizable(true);
 		window.setVisible(true);
 		canvas.requestFocus();

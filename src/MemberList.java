@@ -44,7 +44,7 @@ public class MemberList {
 	 * @param name
 	 * @param newID
 	 */
-	public void changeMemberID (int ID, String name, int newID) {
+	public void changeMemberID (String ID, String name, String newID) {
 		int index = 0;
 		for (Member m : members) {
 			if (m.getID() == ID) {
@@ -62,7 +62,7 @@ public class MemberList {
 	 * @param oldName
 	 * @param newName
 	 */
-	public void changeMemberName (int ID, String oldName, String newName) {
+	public void changeMemberName (String ID, String oldName, String newName) {
 		int index = 0;
 		for (Member m : members) {
 			if (m.getID() == ID) {
@@ -81,7 +81,7 @@ public class MemberList {
 	 * @param item
 	 * @return A string stating that a member has reached the borrowing limit if they have 10 borrowed items, a String of the items borrowed by the member, an error message is returned if something is wrong
 	 */
-	public String addBorrowedItem (int ID, String oldName, ItemTemplate item) {
+	public String addBorrowedItem (String ID, String oldName, ItemTemplate item) {
 		int index = 0;
 		for (Member m : members) {
 			if (m.getID() == ID) {
@@ -105,7 +105,7 @@ public class MemberList {
 	 * @param item
 	 * @return A string stating that a member did not borrow that item, a String of the items borrowed by the member, an error message is returned if something is wrong
 	 */
-	public String returned (int ID, String oldName, ItemTemplate item) {
+	public String returned (String ID, String oldName, ItemTemplate item) {
 		int index = 0;
 		for (Member m : members) {
 			if (m.getID() == ID) {
@@ -126,6 +126,15 @@ public class MemberList {
 		return members;
 	}
 	
+	public Member IDMatch(String id) {
+		for (int x = 0; x < members.size(); x++) {
+			if (members.get(x).getID().equals(id)) {
+				return members.get(x);
+			}
+		}
+		return null;
+	}
+	
 	private  void readData (String filename, ArrayList<Member> members) {
 		File dataFile = new File(filename);
 
@@ -141,7 +150,7 @@ public class MemberList {
 					while (in.hasNext()) {
 						String line = in.nextLine();
 						String name = line.substring(0, line.indexOf(" "));
-						int id = Integer.parseInt(line.substring(line.indexOf(" ") + 1));
+						String id = line.substring(line.indexOf(" ") + 1);
 						members.add(new Member(id, name, new ArrayList<ItemTemplate>()));
 						count++;
 					}
