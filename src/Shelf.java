@@ -88,8 +88,7 @@ public class Shelf {
 	}
 	
 	/**
-	 * Returns an ArrayList containing Magazines and Newspapers
-	 * @return
+	 * @return an ArrayList containing Magazines and Newspapers
 	 */
 	public ItemTemplate[][] getMagazineShelf(){
 		return convertToArray(magazines);

@@ -7,10 +7,13 @@ public class Library {
 	private MemberList list;
 	private Shelf shelf;
 	
-	public Library () {
-		
-	}
-	
+	/**
+	 * Creates a Library with the given books, dvds, magazines, and members from txt files
+	 * @param bookfile
+	 * @param dvdfile
+	 * @param magazinefile
+	 * @param memberfile
+	 */
 	public Library (String bookfile, String dvdfile, String magazinefile, String memberfile) {
 		shelf = new Shelf(bookfile, dvdfile, magazinefile);
 		list = new MemberList(memberfile);

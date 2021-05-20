@@ -122,10 +122,18 @@ public class MemberList {
 		return "error";
 	}
 	
+	/**
+	 * @return the Member List
+	 */
 	public ArrayList<Member> getMemberList(){
 		return members;
 	}
 	
+	/**
+	 * 
+	 * @param id
+	 * @return The first member in the member list that matches the given ID
+	 */
 	public Member IDMatch(String id) {
 		for (int x = 0; x < members.size(); x++) {
 			if (members.get(x).getID().equals(id)) {

@@ -30,6 +30,9 @@ public class Member {
 		borrowed = borrowList;
 	}
 	
+	/**
+	 * @return String of the Member's name, ID, and items currently borrowed
+	 */
 	public String toString() {
 		return "Name: " + name  + "\nID: " + ID + "\nItems currently borrowed: " + getList();
 	}
@@ -91,7 +94,7 @@ public class Member {
 	
 	/**
 	 * gives the ID of the member
-	 * @return
+	 * @return the ID of the Member
 	 */
 	public String getID () {
 		return ID;
@@ -99,7 +102,7 @@ public class Member {
 	
 	/**
 	 * gives the name of the member
-	 * @return 
+	 * @return the name of the Member
 	 */
 	public String getName () {
 		return name;
