@@ -1,1 +1,11 @@
 TIME TIME_Inc. 5/2021
+TIME TIME_Inc. 6/2021
+TIME TIME_Inc. 7/2021
+TIME TIME_Inc. 11/2021
+The_Economist The_Economist 5/2019
+The_Economist The_Economist 6/2021
+The_Economist The_Economist 7/2020
+The_Economist The_Economist 11/2021
+National_Geographic National_Geographic_Partners 5/2021
+National_Geographic National_Geographic_Partners 6/2021
+National_Geographic National_Geographic_Partners 11/2021
