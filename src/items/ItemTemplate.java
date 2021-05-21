@@ -1,5 +1,6 @@
 package items;
 
+import members.Member;
 
 /*
  * This is a template for books, magazines, and DVDs. Has a boolean determing if checked out or not.
@@ -9,6 +10,7 @@ public class ItemTemplate {
 
 	private String title, author;
 	private boolean available;
+	private Member borrower;
 	
 	/*
 	 * Sets an empty title, author, and is not available
@@ -17,6 +19,7 @@ public class ItemTemplate {
 		title = "";
 		author = "";
 		available = false;
+		borrower = new Member();
 	}
 	
 	/**
@@ -29,6 +32,7 @@ public class ItemTemplate {
 		title = t.replace('_', ' ');
 		author = a.replace('_', ' ');
 		available = true;
+		borrower = new Member();
 	}
 	
 	/**
@@ -39,7 +43,7 @@ public class ItemTemplate {
 		if (available)
 			return "Yes";
 		else 
-			return "No";
+			return "No, borrowed by: ID#" + borrower.getID();
 	}
 	
 	public boolean getStatus() {
@@ -50,8 +54,9 @@ public class ItemTemplate {
 	 * Sets availability to the given value
 	 * @param a availability of the item
 	 */
-	public void setAvailability(boolean a) {
+	public void setAvailability(boolean a, Member b) {
 		available = a;
+		borrower = b;
 	}
 	
 	/**

@@ -86,7 +86,7 @@ public class DrawingSurfaceShelves extends PApplet {
 				if (id != null) {
 					if (lib.getMemberList().IDMatch(id) != null) {
 						lib.getMemberList().IDMatch(id).addBorrow(item);
-						item.setAvailability(false);
+						item.setAvailability(false, lib.getMemberList().IDMatch(id));
 						
 					}
 				}
