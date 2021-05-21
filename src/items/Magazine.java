@@ -1,3 +1,5 @@
+package items;
+
 /**
  * Represents a magazine or newspaper. Has an title, publisher, and edition.
  * @author Caden Pun 

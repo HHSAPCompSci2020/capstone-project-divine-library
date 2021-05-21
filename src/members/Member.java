@@ -1,4 +1,7 @@
+package members;
 import java.util.ArrayList;
+
+import items.ItemTemplate;
 
 /**
  * Represents a member of the Library. Has a name, library ID, and list of borrowed items.

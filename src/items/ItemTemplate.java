@@ -1,3 +1,5 @@
+package items;
+
 
 /*
  * This is a template for books, magazines, and DVDs. Has a boolean determing if checked out or not.

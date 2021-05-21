@@ -1,8 +1,14 @@
+package libraryObjects;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import items.Book;
+import items.DVD;
+import items.ItemTemplate;
+import items.Magazine;
 
 /**
  * Represents a shelf in a Library. Contains Books, DVDs, Magazines. Checks if one of these items has been borrowed or not.

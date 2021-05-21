@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import items.ItemTemplate;
+import libraryObjects.Library;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import processing.event.MouseEvent;

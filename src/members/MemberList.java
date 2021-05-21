@@ -1,8 +1,11 @@
+package members;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import items.ItemTemplate;
 
 /**
  * Represents the list of all the Members. Contains all the Members of the library.

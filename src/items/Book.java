@@ -1,3 +1,5 @@
+package items;
+
 /**
  * Represents a book. Has an author, title, and # of pages.
  * @author Caden Pun 
