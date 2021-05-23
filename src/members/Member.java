@@ -47,8 +47,10 @@ public class Member {
 	public String getList() {
 		String list = "";
 		for (int i = 0; i < borrowed.size(); i++) {
-			list += borrowed.get(i).getTitle() + ", ";
+			list += "\n" + borrowed.get(i).getTitle() + ", ";
 		}
+		int remove = list.lastIndexOf(",");
+		list = list.substring(0, remove) + "\n";
 		return list;
 	}
 	
@@ -79,8 +81,13 @@ public class Member {
 	 * add an item to the member's borrowed list
 	 * @param item
 	 */
-	public void addBorrow (ItemTemplate item) {
-		borrowed.add(item);
+	public boolean addBorrow (ItemTemplate item) {
+		if (borrowed.size() < 10) {
+			borrowed.add(item);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	/**
 	 * remove an item from the member's borrowed list

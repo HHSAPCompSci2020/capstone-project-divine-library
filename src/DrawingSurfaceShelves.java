@@ -94,8 +94,12 @@ public class DrawingSurfaceShelves extends Screen {
 					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to borrow book.");
 					if (id != null) {
 						if (lib.getMemberList().IDMatch(id) != null) {
-							lib.getMemberList().IDMatch(id).addBorrow(item);
-							item.setAvailability(false, lib.getMemberList().IDMatch(id));
+							
+							if (lib.getMemberList().IDMatch(id).addBorrow(item)) {
+								item.setAvailability(false, lib.getMemberList().IDMatch(id));
+							} else {
+								JOptionPane.showMessageDialog(null, "Borrow limit reached.");
+							}
 						}
 					}
 				}
