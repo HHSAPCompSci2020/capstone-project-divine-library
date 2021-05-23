@@ -16,14 +16,17 @@ import processing.event.MouseEvent;
  * @author Harshith Pothula
  *
  */
-public class DrawingSurfaceMembers extends PApplet {
+public class DrawingSurfaceMembers extends Screen {
 
 	private ArrayList<Member> list;	
+	private DrawingSurface surface;
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceMembers(ArrayList<Member> arrayList) 
+	public DrawingSurfaceMembers(ArrayList<Member> arrayList, DrawingSurface s) 
 	{
+		super(s.width, s.height);
 		list = arrayList;
+		surface = s;
 	}
 	
 	
@@ -36,32 +39,32 @@ public class DrawingSurfaceMembers extends PApplet {
 	
 	public void draw()
 	{
-		background(255);
-		pushStyle();
-		fill(0);
-		textSize(25);
-		textAlign(CENTER, CENTER);
+		surface.background(255);
+		surface.pushStyle();
+		surface.fill(0);
+		surface.textSize(25);
+		surface.textAlign(surface.CENTER,surface.CENTER);
 		int x = list.size();
 		for (int i = 0; i < x; i++) {
-			line(0, i*(height/x), width, i*(height/x)) ;
-			text(list.get(i).getName(), 0, i*(height/x), width/2, height/x);
-			text(list.get(i).getID(), width/2, i*(height/x), width/2, height/x);
+			surface.line(0, i*(surface.height/x), surface.width, i*(surface.height/x)) ;
+			surface.text(list.get(i).getName(), 0, i*(surface.height/x), surface.width/2,surface.height/x);
+			surface.text(list.get(i).getID(), surface.width/2, i*(surface.height/x), surface.width/2, surface.height/x);
 		}
 		
-		popStyle();
+		surface.popStyle();
 
 	}
 	
 	public void mousePressed() {
 		float s = list.size();
-		float x = mouseX;
-		float y = mouseY;
+		float x = surface.mouseX;
+		float y = surface.mouseY;
 		Member m = null;
 		
-		if (mouseButton == LEFT) {
+		if (surface.mouseButton == surface.LEFT) {
 			for (int i = 0; i < s; i++) {
 				if (m == null) {
-				if (y > i*(height/s) && y < (i+1)*(height/s)) {
+				if (y > i*(surface.height/s) && y < (i+1)*(surface.height/s)) {
 						m = list.get(i);
 					}
 				}
@@ -71,7 +74,7 @@ public class DrawingSurfaceMembers extends PApplet {
 				JOptionPane.showMessageDialog(null, m.toString());
 			}
 		}
-		if (mouseButton == RIGHT) {
+		if (surface.mouseButton == surface.RIGHT) {
 			//Finish this so that right click can edit the name
 		}
 	}
