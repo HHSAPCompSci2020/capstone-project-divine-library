@@ -80,10 +80,10 @@ public class DrawingSurfaceMembers extends Screen {
 		}
 		if (surface.mouseButton == surface.RIGHT) {
 			if (m != null) {
-				String id = JOptionPane.showInputDialog(m.toString() + "\nEnter New Member Name.");
-				if (!(id.isEmpty()) && id != null) {
+				String newName = JOptionPane.showInputDialog(m.toString() + "\nEnter New Member Name.");
+				if (newName != null) {
 					if (m.getName() != null) {
-						m.setName(id);
+						m.setName(newName);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, m.toString());

@@ -87,19 +87,36 @@ public class DrawingSurfaceShelves extends Screen {
 			}
 		}
 		
-		if (item != null) {
-			if(item.getStatus()) {
-				String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to borrow book.");
-				if (id != null) {
-					if (lib.getMemberList().IDMatch(id) != null) {
-						lib.getMemberList().IDMatch(id).addBorrow(item);
-						item.setAvailability(false, lib.getMemberList().IDMatch(id));
-						
+		if (surface.mouseButton == surface.LEFT) {
+			if (item != null) {
+				if(item.getStatus()) {
+					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to borrow book.");
+					if (id != null) {
+						if (lib.getMemberList().IDMatch(id) != null) {
+							lib.getMemberList().IDMatch(id).addBorrow(item);
+							item.setAvailability(false, lib.getMemberList().IDMatch(id));
+						}
 					}
 				}
+				else {
+					JOptionPane.showMessageDialog(null, item.toString());
+				}
 			}
-			else {
-				JOptionPane.showMessageDialog(null, item.toString());
+		}
+		if (surface.mouseButton == surface.RIGHT) {
+			if (item != null) {
+				if(!(item.getStatus())) {
+					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to return book.");
+					if (id != null) {
+						if (lib.getMemberList().IDMatch(id) != null) {
+							lib.getMemberList().IDMatch(id).returned(item);
+							item.setAvailability(true, lib.getMemberList().IDMatch(id));
+						}
+					}
+				}
+				else {
+					JOptionPane.showMessageDialog(null, item.toString());
+				}
 			}
 		}
 //		if (true) {
