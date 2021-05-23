@@ -65,21 +65,30 @@ public class DrawingSurfaceMembers extends Screen {
 		float y = surface.mouseY;
 		Member m = null;
 		
-		if (surface.mouseButton == surface.LEFT) {
-			for (int i = 0; i < s; i++) {
-				if (m == null) {
-				if (y > i*(surface.height/s) && y < (i+1)*(surface.height/s)) {
-						m = list.get(i);
-					}
+		for (int i = 0; i < s; i++) {
+			if (m == null) {
+			if (y > i*(surface.height/s) && y < (i+1)*(surface.height/s)) {
+					m = list.get(i);
 				}
 			}
-			
+		}
+		
+		if (surface.mouseButton == surface.LEFT) {
 			if (m != null) {
 				JOptionPane.showMessageDialog(null, m.toString());
 			}
 		}
 		if (surface.mouseButton == surface.RIGHT) {
-			//Finish this so that right click can edit the name
+			if (m != null) {
+				String id = JOptionPane.showInputDialog(m.toString() + "\nEnter New Member Name.");
+				if (!(id.isEmpty()) && id != null) {
+					if (m.getName() != null) {
+						m.setName(id);
+					}
+				} else {
+					JOptionPane.showMessageDialog(null, m.toString());
+				}
+			}
 		}
 	}
 	
