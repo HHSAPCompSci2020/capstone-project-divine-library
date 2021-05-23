@@ -9,8 +9,8 @@ import members.Member;
 public class ItemTemplate {
 
 	private String title, author;
-	private boolean available;
-	private Member borrower;
+	private boolean available, waitlisted;
+	private Member borrower, waitlister;
 	
 	/*
 	 * Sets an empty title, author, and is not available
@@ -19,7 +19,9 @@ public class ItemTemplate {
 		title = "";
 		author = "";
 		available = false;
+		waitlisted = false;
 		borrower = new Member();
+		waitlister = new Member();
 	}
 	
 	/**
@@ -32,7 +34,9 @@ public class ItemTemplate {
 		title = t.replace('_', ' ');
 		author = a.replace('_', ' ');
 		available = true;
+		waitlisted = false;
 		borrower = new Member();
+		waitlister = new Member();
 	}
 	
 	/**
@@ -50,6 +54,10 @@ public class ItemTemplate {
 		return available;
 	}
 	
+	public boolean isWaitlisted() {
+		return waitlisted;
+	}
+	
 	/**
 	 * Sets availability to the given value
 	 * @param a availability of the item
@@ -57,6 +65,11 @@ public class ItemTemplate {
 	public void setAvailability(boolean a, Member b) {
 		available = a;
 		borrower = b;
+	}
+	
+	public void setWaitlister(boolean a, Member b) {
+		waitlisted = a;
+		waitlister = b;
 	}
 	
 	/**
@@ -71,6 +84,16 @@ public class ItemTemplate {
 	 */
 	public String getAuthor() {
 		return author;
+	}
+	
+	public String getWaitlisterID() {
+		return waitlister.getID();
+	}
+	
+	public String getWaitlistStatus() {
+		return "Title: " + getTitle() + 
+				   "\nAuthor: " + getAuthor() + 
+				   "\nWaitlisted by: ID#" + getWaitlisterID();
 	}
 	
 }

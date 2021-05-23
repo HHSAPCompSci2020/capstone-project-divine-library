@@ -16,9 +16,10 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 	private Screen activeScreen;
 	private ArrayList<Screen> screens;
 	private Library library;	
+	private DrawingSurfaceLibrary lib;
 	private DrawingSurfaceShelves shelves;
-	private DrawingSurfaceMembers list;
-	private PImage book, cd, mag;
+	private DrawingSurfaceMembers members;
+	private DrawingSurfaceWaitlist waiting;
 	
 	public DrawingSurface() {
 		
@@ -27,14 +28,17 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		keys = new ArrayList<Integer>();
 		
 		
-		DrawingSurfaceLibrary lib = new DrawingSurfaceLibrary(this);
+		 lib = new DrawingSurfaceLibrary(this);
 		screens.add(lib);
 		
-		DrawingSurfaceShelves shelves = new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library,this);
+		shelves = new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library,this);
 		screens.add(shelves);
 		
-		DrawingSurfaceMembers members = new DrawingSurfaceMembers(library.getMemberList().getMemberList(), this);
+		members = new DrawingSurfaceMembers(library.getMemberList().getMemberList(), this);
 		screens.add(members);
+		
+		waiting = new DrawingSurfaceWaitlist(library.getShelves().getBookShelf(), library, this);
+		screens.add(waiting);
 		activeScreen = screens.get(0);
 		
 	}
@@ -108,12 +112,18 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 	public void setShelf(String s) {
 		if (s.equals("BOOK")) {
 			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library,this));
+			screens.set(3, new DrawingSurfaceWaitlist(library.getShelves().getBookShelf(), library,this));
+
 		}
 		if (s.equals("DVD")) {
 			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getDVDShelf(), library,this));
+			screens.set(3, new DrawingSurfaceWaitlist(library.getShelves().getDVDShelf(), library,this));
+
 		}
 		if (s.equals("MAG")) {
 			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getMagazineShelf(), library,this));
+			screens.set(3, new DrawingSurfaceWaitlist(library.getShelves().getMagazineShelf(), library,this));
+
 		}
 	}
 

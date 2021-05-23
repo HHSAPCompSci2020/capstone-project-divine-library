@@ -56,16 +56,26 @@ public class DrawingSurfaceLibrary extends Screen {
 		surface.textAlign(surface.CENTER);
 		surface.fill(0);
 		surface.text("Books",                        (float) (surface.width/6.0), (float) (surface.height/10.0));
+		surface.text("Waitlist", (float) (surface.width/6), (float) (surface.height/4 + surface.height/3 + surface.height/8));
+
 		surface.text("DVDs",                         (float) (surface.width/2.0), (float) (surface.height/10.0));
+		surface.text("Waitlist", (float) (surface.width/2), (float) (surface.height/4 + surface.height/3 + surface.height/8));
+
 		surface.text("Newspapers \n& Magazines", (float) (5*(surface.width/6.0)), (float) (surface.height/10.0));
-		surface.text("Members",                      (float) (surface.width/2), (float) (surface.height/4 + surface.height/3 + surface.height/8));
+		surface.text("Waitlist", (float) (5*(surface.width/6.0)), (float) (surface.height/4 + surface.height/3 + surface.height/8));
+
+		surface.text("Members",                      (float) (surface.width/2), (float) (surface.height - surface.height/10));
 		    
 		surface.noFill();
 		surface.strokeWeight(3);
 		surface.rect((float) 0,                 (float) (surface.height/4.0),  (float)(surface.width/3.0), (float)(surface.height/3.0));
 		surface.rect((float)(surface.width/3.0),        (float) (surface.height/4.0),  (float)(surface.width/3.0), (float)(surface.height/3.0));
 		surface.rect((float) (2.0*(surface.width/3.0)), (float) (surface.height/4.0),  (float)(surface.width/3.0), (float)(surface.height/3.0));
-		surface.rect((float) 0,                 (float) (surface.height/4 + surface.height/3), (float) surface.width, (float) (surface.height/4));
+		
+		surface.rect((float) 0,                 (float) (surface.height/4.0 + surface.height/3.0),  (float)(surface.width/3.0), (float)(surface.height/5.0));
+		surface.rect((float)(surface.width/3.0),        (float) (surface.height/4.0 + surface.height/3.0),  (float)(surface.width/3.0), (float)(surface.height/5.0));
+		surface.rect((float) (2.0*(surface.width/3.0)), (float) (surface.height/4.0 + surface.height/3.0),  (float)(surface.width/3.0), (float)(surface.height/5.0));
+		
 		surface.popStyle();
 		
 	}
@@ -80,30 +90,34 @@ public class DrawingSurfaceLibrary extends Screen {
 			surface.setShelf("BOOK");
 			surface.switchScreen(ScreenSwitcher.SCREEN2);
 		}
-		 if (x>surface.width/3    && y>surface.height/4        && x < (2*surface.width/3) && y<(surface.height/4 +surface.height/3)) {
+		if (x>surface.width/3    && y>surface.height/4        && x < (2*surface.width/3) && y<(surface.height/4 +surface.height/3)) {
 			surface.setShelf("DVD");
 			surface.switchScreen(ScreenSwitcher.SCREEN2);
 
 		}
-		 if (x>(2*surface.width/3) && y > surface.height/4  &&  x<surface.width        && y<surface.height/4 +surface.height/3){
+		if (x>(2*surface.width/3) && y > surface.height/4  &&  x<surface.width        && y<surface.height/4 +surface.height/3){
 			surface.setShelf("MAG");
 			surface.switchScreen(ScreenSwitcher.SCREEN2);
 
 		}
-		 if (x > 0       && y > surface.height/4 + surface.height/3    && x < surface.width      && y < surface.height/2 + surface.height/3) {
-			 surface.switchScreen(ScreenSwitcher.SCREEN3);
+		if (x > 0  && y > surface.height/4.0 + surface.height/3.0 + surface.height/5.0 && x < surface.width && y < surface.height) {
+			surface.switchScreen(ScreenSwitcher.SCREEN3);
 		}
 		
-		if (s != null) {
-			
+		if (x>0          && y>surface.height/4 +surface.height/3                  && x<surface.width/3      && y<surface.height/4 +surface.height/3+ surface.height/5.0) {
+			surface.setShelf("BOOK");
+			surface.switchScreen(ScreenSwitcher.SCREEN4);
+		}
 
+		if (x>surface.width/3    && y>surface.height/4 +surface.height/3       && x < (2*surface.width/3) && y<(surface.height/4 +surface.height/3+ surface.height/5.0)) {
+			surface.setShelf("DVD");
+			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		}
 		
-		if (m != null) {
-			
-
+		if (x>(2*surface.width/3) && y > surface.height/4 +surface.height/3 &&  x<surface.width        && y<surface.height/4 +surface.height/3+ surface.height/5.0){
+			surface.setShelf("MAG");
+			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		}
-		
 	}
 	
 	

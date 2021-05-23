@@ -5,3 +5,8 @@ Harry_Potter_and_the_Goblet_of_Fire J.K._Rowling 734
 Harry_Potter_and_the_Order_of_the_Phoenix J.K._Rowling 870
 Harry_Potter_and_the_Half-Blood_Prince J.K._Rowling 652
 Harry_Potter_and_the_Deathly_Hallows J.K._Rowling 759
+Percy_Jackson_and_the_Olympians:_The_Lightning_Thief Rick_Riordan 377
+Percy_Jackson_and_the_Olympians:_Sea_Of_Monsters Rick_Riordan 265
+Percy_Jackson_and_the_Olympians:_The_Titan's_Curse Rick_Riordan 352
+Percy_Jackson_and_the_Olympians:_The_Battle_Of_the_Labyrinth Rick_Riordan 342
+Percy_Jackson_and_the_Olympians:_The_Last_Olympian Rick_Riordan 361
