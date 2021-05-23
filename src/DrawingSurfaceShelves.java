@@ -118,8 +118,10 @@ public class DrawingSurfaceShelves extends Screen {
 							item.setAvailability(true, lib.getMemberList().IDMatch(id));
 							
 							if (item.isWaitlisted()) {
-								item.setAvailability(false, lib.getMemberList().IDMatch(item.getWaitlisterID()));
-								item.setWaitlister(false, new Member());
+								if (lib.getMemberList().IDMatch(item.getWaitlisterID()).addBorrow(item)) {
+									item.setAvailability(false, lib.getMemberList().IDMatch(item.getWaitlisterID()));
+									item.setWaitlister(false, new Member());
+								}
 							}
 						}
 					}

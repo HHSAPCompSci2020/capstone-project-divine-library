@@ -47,10 +47,9 @@ public class Member {
 	public String getList() {
 		String list = "";
 		for (int i = 0; i < borrowed.size(); i++) {
-			list += "\n" + borrowed.get(i).getTitle() + ", ";
+			list += "\n" + borrowed.get(i).getTitle();
 		}
-		int remove = list.lastIndexOf(",");
-		list = list.substring(0, remove) + "\n";
+		list += "\n";
 		return list;
 	}
 	
