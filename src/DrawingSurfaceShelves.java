@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import items.ItemTemplate;
 import libraryObjects.Library;
+import members.Member;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import processing.event.MouseEvent;
@@ -111,6 +112,11 @@ public class DrawingSurfaceShelves extends Screen {
 						if (lib.getMemberList().IDMatch(id) != null) {
 							lib.getMemberList().IDMatch(id).returned(item);
 							item.setAvailability(true, lib.getMemberList().IDMatch(id));
+							
+							if (item.isWaitlisted()) {
+								item.setAvailability(false, lib.getMemberList().IDMatch(item.getWaitlisterID()));
+								item.setWaitlister(false, new Member());
+							}
 						}
 					}
 				}
