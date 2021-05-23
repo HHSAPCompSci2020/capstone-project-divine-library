@@ -30,9 +30,11 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		DrawingSurfaceLibrary lib = new DrawingSurfaceLibrary(this);
 		screens.add(lib);
 		
-//		DrawingSurfaceShelves shelves = new DrawingSurfaceShelves(library.this);
-//		screens.add(shelves);
-//		
+		DrawingSurfaceShelves shelves = new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library,this);
+		screens.add(shelves);
+		
+		DrawingSurfaceMembers members = new DrawingSurfaceMembers(library.getMemberList().getMemberList(), this);
+		screens.add(members);
 		activeScreen = screens.get(0);
 		
 	}
@@ -101,6 +103,18 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 	@Override
 	public void switchScreen(int i) {
 		activeScreen = screens.get(i);
+	}
+	
+	public void setShelf(String s) {
+		if (s.equals("BOOK")) {
+			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library,this));
+		}
+		if (s.equals("DVD")) {
+			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getDVDShelf(), library,this));
+		}
+		if (s.equals("MAG")) {
+			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getMagazineShelf(), library,this));
+		}
 	}
 
 }

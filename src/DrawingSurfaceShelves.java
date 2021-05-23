@@ -62,6 +62,10 @@ public class DrawingSurfaceShelves extends Screen {
 		}
 			
 		surface.popStyle();
+		
+		if (surface.isPressed(KeyEvent.VK_SPACE)) {
+			surface.switchScreen(ScreenSwitcher.SCREEN1);
+		}
 
 	}
 	

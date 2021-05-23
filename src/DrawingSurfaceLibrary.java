@@ -77,12 +77,21 @@ public class DrawingSurfaceLibrary extends Screen {
 		float y = surface.mouseY;
 		
 		if (x>0          && y>surface.height/4                   && x<surface.width/3      && y<surface.height/4 +surface.height/3) {
+			surface.setShelf("BOOK");
+			surface.switchScreen(ScreenSwitcher.SCREEN2);
 		}
 		 if (x>surface.width/3    && y>surface.height/4        && x < (2*surface.width/3) && y<(surface.height/4 +surface.height/3)) {
+			surface.setShelf("DVD");
+			surface.switchScreen(ScreenSwitcher.SCREEN2);
+
 		}
 		 if (x>(2*surface.width/3) && y > surface.height/4  &&  x<surface.width        && y<surface.height/4 +surface.height/3){
+			surface.setShelf("MAG");
+			surface.switchScreen(ScreenSwitcher.SCREEN2);
+
 		}
 		 if (x > 0       && y > surface.height/4 + surface.height/3    && x < surface.width      && y < surface.height/2 + surface.height/3) {
+			 surface.switchScreen(ScreenSwitcher.SCREEN3);
 		}
 		
 		if (s != null) {

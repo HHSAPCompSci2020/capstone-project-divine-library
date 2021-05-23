@@ -53,6 +53,10 @@ public class DrawingSurfaceMembers extends Screen {
 		
 		surface.popStyle();
 
+		
+		if (surface.isPressed(KeyEvent.VK_SPACE)) {
+			surface.switchScreen(ScreenSwitcher.SCREEN1);
+		}
 	}
 	
 	public void mousePressed() {
@@ -78,4 +82,6 @@ public class DrawingSurfaceMembers extends Screen {
 			//Finish this so that right click can edit the name
 		}
 	}
+	
+	
 }
