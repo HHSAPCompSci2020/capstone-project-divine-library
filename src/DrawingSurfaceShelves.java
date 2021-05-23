@@ -16,16 +16,19 @@ import processing.event.MouseEvent;
  * @author Harshith Pothula
  *
  */
-public class DrawingSurfaceShelves extends PApplet {
+public class DrawingSurfaceShelves extends Screen {
 
 	private ItemTemplate[][] items;	
 	private Library lib;
+	private DrawingSurface surface;
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceShelves(ItemTemplate[][] itemTemplates, Library lib)
+	public DrawingSurfaceShelves(ItemTemplate[][] itemTemplates, Library lib, DrawingSurface s)
 	{
+		super(s.width,s.height);
 		items = itemTemplates;
 		this.lib = lib;
+		surface = s;
 	}
 	
 	
@@ -39,26 +42,26 @@ public class DrawingSurfaceShelves extends PApplet {
 	
 	public void draw()
 	{
-		background(255);
-		pushStyle();
+		surface.background(255);
+		surface.pushStyle();
 		
 		float x = items.length;
 		float y = items[0].length;
 		
 		for (int i = 1; i <= x; i++) {
-			line(i*(width/x), 0, i*(width/x), height );
-			line(0, i*(height/x), width, i*(height/x)) ;
+			surface.line(i*(surface.width/x), 0, i*(surface.width/x), surface.height );
+			surface.line(0, i*(surface.height/x), surface.width, i*(surface.height/x)) ;
 		}
-		fill(0);
-		textSize(15);
-		this.textAlign(CENTER, CENTER);
+		surface.fill(0);
+		surface.textSize(15);
+		surface.textAlign(surface.CENTER, surface.CENTER);
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
-				text(items[i][j].getTitle(), i*(width/x), j*(height/y), width/x, height/y);
+				surface.text(items[i][j].getTitle(), i*(surface.width/x), j*(surface.height/y), surface.width/x, surface.height/y);
 			}
 		}
 			
-		popStyle();
+		surface.popStyle();
 
 	}
 	
@@ -66,14 +69,14 @@ public class DrawingSurfaceShelves extends PApplet {
 		
 		float x = items.length;
 		float y = items[0].length;
-		float mx = mouseX;
-		float my = mouseY;
+		float mx = surface.mouseX;
+		float my = surface.mouseY;
 		ItemTemplate item = null;
 		
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
 				if (item == null) {
-					if (mx > i*(width/x) && my > j*(height/y) && mx < (i*(width/x)) + width/x && my < (j*(height/y) + height/y)) {
+					if (mx > i*(surface.width/x) && my > j*(surface.height/y) && mx < (i*(surface.width/x)) + surface.width/x && my < (j*(surface.height/y) + surface.height/y)) {
 						item = items[i][j];
 					}
 				}
