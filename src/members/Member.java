@@ -37,7 +37,8 @@ public class Member {
 	 * @return String of the Member's name, ID, and items currently borrowed
 	 */
 	public String toString() {
-		return "Name: " + name  + "\nID: " + ID + "\nItems currently borrowed: " + getList();
+		int remainder = 10 - borrowed.size();
+		return "Name: " + name  + "\nID: " + ID + "\nItems currently borrowed: " + getList() + "\n# of additional items that can be borrowed: " + remainder;
 	}
 
 	/**
