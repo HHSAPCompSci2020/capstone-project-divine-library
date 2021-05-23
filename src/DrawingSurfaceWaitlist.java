@@ -16,19 +16,29 @@ import processing.event.MouseEvent;
  * @author Harshith Pothula
  *
  */
-public class DrawingSurfaceShelves extends Screen {
+public class DrawingSurfaceWaitlist extends Screen {
 
 	private ItemTemplate[][] items;	
 	private Library lib;
 	private DrawingSurface surface;
 		
 	// CONSTRUCTOR - Initialize any added fields here.
-	public DrawingSurfaceShelves(ItemTemplate[][] itemTemplates, Library lib, DrawingSurface s)
+	public DrawingSurfaceWaitlist(ItemTemplate[][] itemTemplates, Library lib, DrawingSurface s)
 	{
 		super(s.width,s.height);
 		items = itemTemplates;
 		this.lib = lib;
 		surface = s;
+		
+		ArrayList<ItemTemplate> list = new ArrayList<ItemTemplate>();
+		for (int i = 0; i < items.length; i++) {
+			for (int j = 0; j < items[0].length; j ++) {
+				if (!items[j][i].getStatus())
+					list.add(items[j][i]);
+			}
+		}
+		
+		items = convertToArray(list);
 	}
 	
 	
@@ -87,36 +97,19 @@ public class DrawingSurfaceShelves extends Screen {
 			}
 		}
 		
-		if (surface.mouseButton == surface.LEFT) {
-			if (item != null) {
-				if(item.getStatus()) {
-					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to borrow book.");
-					if (id != null) {
-						if (lib.getMemberList().IDMatch(id) != null) {
-							lib.getMemberList().IDMatch(id).addBorrow(item);
-							item.setAvailability(false, lib.getMemberList().IDMatch(id));
-						}
+		if (item != null) {
+			
+			if(!item.isWaitlisted()) {
+				String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to waitlist book.");
+				if (id != null) {
+					if (lib.getMemberList().IDMatch(id) != null) {
+						item.setWaitlister(true, lib.getMemberList().IDMatch(id));
+						
 					}
-				}
-				else {
-					JOptionPane.showMessageDialog(null, item.toString());
 				}
 			}
-		}
-		if (surface.mouseButton == surface.RIGHT) {
-			if (item != null) {
-				if(!(item.getStatus())) {
-					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to return book.");
-					if (id != null) {
-						if (lib.getMemberList().IDMatch(id) != null) {
-							lib.getMemberList().IDMatch(id).returned(item);
-							item.setAvailability(true, lib.getMemberList().IDMatch(id));
-						}
-					}
-				}
-				else {
-					JOptionPane.showMessageDialog(null, item.toString());
-				}
+			else {
+				JOptionPane.showMessageDialog(null, item.getWaitlistStatus());
 			}
 		}
 //		if (true) {
@@ -132,6 +125,29 @@ public class DrawingSurfaceShelves extends Screen {
 //				answer = "";
 //		} 
 		
+	}
+	
+	private ItemTemplate[][] convertToArray(ArrayList<ItemTemplate> items) {
+		ItemTemplate[][] a = new ItemTemplate[5][5];
+		
+		if (items.size() >= 25) {
+			int x = (int) Math.sqrt(items.size()) + 1;
+			a = new ItemTemplate[x][x];
+		}
+		int n = 0;
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[0].length; j++) {
+				if (items.size() > n) {
+					a[j][i] = items.get(n);
+				}
+				else {
+					a[j][i] = new ItemTemplate();
+				}
+				n++;
+			}
+		}
+		
+		return a;
 	}
 	
 }
