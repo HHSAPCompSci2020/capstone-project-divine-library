@@ -90,6 +90,10 @@ public class ItemTemplate {
 		return waitlister.getID();
 	}
 	
+	public String getBorrower() {
+		return borrower.getID();
+	}
+	
 	public String getWaitlistStatus() {
 		return "Title: " + getTitle() + 
 				   "\nAuthor: " + getAuthor() + 

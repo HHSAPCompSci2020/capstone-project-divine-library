@@ -113,7 +113,7 @@ public class DrawingSurfaceShelves extends Screen {
 				if(!(item.getStatus())) {
 					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to return book.");
 					if (id != null) {
-						if (lib.getMemberList().IDMatch(id) != null) {
+						if (lib.getMemberList().IDMatch(id) != null && id == item.getBorrower()) {
 							lib.getMemberList().IDMatch(id).returned(item);
 							item.setAvailability(true, lib.getMemberList().IDMatch(id));
 							
@@ -121,8 +121,12 @@ public class DrawingSurfaceShelves extends Screen {
 								if (lib.getMemberList().IDMatch(item.getWaitlisterID()).addBorrow(item)) {
 									item.setAvailability(false, lib.getMemberList().IDMatch(item.getWaitlisterID()));
 									item.setWaitlister(false, new Member());
+								} else {
+									JOptionPane.showMessageDialog(null, "Borrow limit reached for Waitlister ID " + item.getWaitlisterID() + ", could not borrow " + item.getTitle() + ".");
 								}
 							}
+						} else {
+							JOptionPane.showMessageDialog(null, "Member ID " + id + " is not the current borrower of this item.");
 						}
 					}
 				}
