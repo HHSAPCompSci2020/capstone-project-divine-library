@@ -80,6 +80,7 @@ public class Shelf {
 	}
 	
 	/**
+	 * Returns the book shelf
 	 * @return an ArrayList containing books
 	 */
 	public ItemTemplate[][] getBookShelf(){
@@ -87,6 +88,7 @@ public class Shelf {
 	}
 	
 	/**
+	 * Returns the DVD shelf
 	 * @return an ArrayList containing DVDs
 	 */
 	public ItemTemplate[][] getDVDShelf(){
@@ -94,6 +96,7 @@ public class Shelf {
 	}
 	
 	/**
+	 * Returns the Magazine and Newspaper shelf
 	 * @return an ArrayList containing Magazines and Newspapers
 	 */
 	public ItemTemplate[][] getMagazineShelf(){

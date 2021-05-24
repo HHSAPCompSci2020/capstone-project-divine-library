@@ -40,7 +40,9 @@ public class DrawingSurfaceShelves extends Screen {
 	
 	}
 	
-	
+	/**
+	 * Draws the shelf with the appropriate item type depending on the mouseclick in DrawingSurfaceLibrary
+	 */
 	public void draw()
 	{
 		surface.background(255);
@@ -70,6 +72,10 @@ public class DrawingSurfaceShelves extends Screen {
 
 	}
 	
+	/**
+	 * Left-click: If available, opens popup to borrow item
+	 * Right-click: If borrowed, opens popup to return item
+	 */
 	public void mousePressed() {
 		
 		float x = items.length;

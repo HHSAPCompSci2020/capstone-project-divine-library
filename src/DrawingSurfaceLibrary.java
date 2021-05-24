@@ -42,7 +42,9 @@ public class DrawingSurfaceLibrary extends Screen {
 
 	}
 	
-	
+	/**
+	 * Draws the images and boxes representing the shelves, member list, and waitlist.
+	 */
 	public void draw()
 	{
 		surface.background(255);
@@ -81,7 +83,9 @@ public class DrawingSurfaceLibrary extends Screen {
 	}
 	
 	
-	
+	/**
+	 * Depending on the coordinates of the mouse press, the screen will switch to a shelf, member list, or waitlist.
+	 */
 	public void mousePressed() {
 		float x = surface.mouseX;
 		float y = surface.mouseY;

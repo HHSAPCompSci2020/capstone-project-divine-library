@@ -49,7 +49,9 @@ public class DrawingSurfaceWaitlist extends Screen {
 	
 	}
 	
-	
+	/**
+	 * Draws the waitlist
+	 */
 	public void draw()
 	{
 		surface.background(255);
@@ -79,6 +81,9 @@ public class DrawingSurfaceWaitlist extends Screen {
 
 	}
 	
+	/**
+	 * Opens popup to join the waitlist for the item
+	 */
 	public void mousePressed() {
 		
 		float x = items.length;

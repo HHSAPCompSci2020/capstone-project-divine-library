@@ -36,7 +36,9 @@ public class DrawingSurfaceMembers extends Screen {
 	{
 	}
 	
-	
+	/**
+	 * Draws the memberlist
+	 */
 	public void draw()
 	{
 		surface.background(255);
@@ -59,6 +61,10 @@ public class DrawingSurfaceMembers extends Screen {
 		}
 	}
 	
+	/**
+	 * Left-click: opens popup with member info
+	 * Right-click: opens popup to rename member
+	 */
 	public void mousePressed() {
 		float s = list.size();
 		float x = surface.mouseX;

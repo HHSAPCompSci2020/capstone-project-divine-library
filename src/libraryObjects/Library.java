@@ -23,6 +23,7 @@ public class Library {
 	}
 	
 	/**
+	 * Returns the shelves
 	 * @return the shelves
 	 */
 	public Shelf getShelves() {
@@ -30,6 +31,7 @@ public class Library {
 	}
 	
 	/**
+	 * Returns the member list
 	 * @return the list of members
 	 */
 	public MemberList getMemberList() {

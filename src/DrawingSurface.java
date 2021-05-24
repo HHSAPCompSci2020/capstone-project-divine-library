@@ -9,7 +9,7 @@ import processing.core.PImage;
 
 public class DrawingSurface extends PApplet implements ScreenSwitcher {
 
-	public float ratioX, ratioY;
+	private float ratioX, ratioY;
 	
 	private ArrayList<Integer> keys;
 	
@@ -54,6 +54,9 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 			s.setup();
 	}
 	
+	/**
+	 * Draws the selected screen
+	 */
 	public void draw() {
 		ratioX = (float)width/activeScreen.DRAWING_WIDTH;
 		ratioY = (float)height/activeScreen.DRAWING_HEIGHT;
@@ -100,15 +103,22 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		return new Point((int)(assumed.getX()*ratioX), (int)(assumed.getY()*ratioY));
 	}
 
+
 	public Point actualCoordinatesToAssumed(Point actual) {
 		return new Point((int)(actual.getX()/ratioX) , (int)(actual.getY()/ratioY));
 	}
-
-	@Override
+	
+	/**
+	 * @param i Number of the screen to be switched to
+	 */
 	public void switchScreen(int i) {
 		activeScreen = screens.get(i);
 	}
 	
+	/**
+	 * Sets a shelf to a different itemTemplate
+	 * @param s type of shelf
+	 */
 	public void setShelf(String s) {
 		if (s.equals("BOOK")) {
 			screens.set(1, new DrawingSurfaceShelves(library.getShelves().getBookShelf(), library,this));
