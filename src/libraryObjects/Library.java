@@ -15,7 +15,7 @@ public class Library {
 	 * Creates a Library with the given books, dvds, magazines, and members from txt files
 	 * @param bookfile text file containing list of books
 	 * @param dvdfile text file containing list of DVDs
-	 * @param magazinefile text file containing list of magazines & newspapers
+	 * @param magazinefile text file containing list of magazines and newspapers
 	 * @param memberfile text file containing list of members
 	 */
 	public Library (String bookfile, String dvdfile, String magazinefile, String memberfile) {

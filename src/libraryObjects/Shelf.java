@@ -32,7 +32,7 @@ public class Shelf {
 	 * Creates shelves with the given books, dvds, and magazines from txt files
 	 * @param bookfile text file containing list of books
 	 * @param dvdfile text file containing list of DVDs
-	 * @param magazinefile text file containing list of magazines & newspapers
+	 * @param magazinefile text file containing list of magazines and newspapers
 	 */
 	public Shelf(String bookfile, String dvdfile, String magazinefile) {
 		books = new ArrayList<ItemTemplate>();

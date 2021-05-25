@@ -127,7 +127,7 @@ public class DrawingSurfaceShelves extends Screen {
 				if(!(item.getStatus())) {
 					String id = JOptionPane.showInputDialog(item.toString() + "\nEnter Member ID to return book.");
 					if (id != null) {
-						if (lib.getMemberList().IDMatch(id) != null && id == item.getBorrower()) {
+						if (lib.getMemberList().IDMatch(id) != null && id.equals(item.getBorrower()) ) {
 							lib.getMemberList().IDMatch(id).returned(item);
 							item.setAvailability(true, lib.getMemberList().IDMatch(id));
 							

@@ -81,7 +81,8 @@ public class Member {
 	
 	/**
 	 * add an item to the member's borrowed list
-	 * @param Itemtemplate item wish to add
+	 * @param item item wish to add
+	 * @return True, when item is added, and false, when item cannot be added
 	 */
 	public boolean addBorrow (ItemTemplate item) {
 		if (borrowed.size() < 10) {
@@ -91,9 +92,10 @@ public class Member {
 			return false;
 		}
 	}
+	
 	/**
-	 * remove an item from the member's borrowed list
-	 * @param ItemTemplate item returned
+	 *  remove an item from the member's borrowed list
+	 * @param item item returned
 	 * @return String stating if you successfully returned an item or did not borrow the item
 	 */
 	public String returned (ItemTemplate item) {
