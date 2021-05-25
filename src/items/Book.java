@@ -1,7 +1,9 @@
 package items;
 
 /**
- * Represents a book. Has an author, title, and # of pages.
+ * Represents a book. inherited all variables from itemTemplate, plus the number of pages.
+ * @author James Jian
+ * @author Harshith Pothula
  * @author Caden Pun 
  *
  */
@@ -15,8 +17,8 @@ public class Book extends ItemTemplate{
 	
 	/**
 	 * Sets the book's title, author, and length to the given values
-	 * @param title Title
-	 * @param author Author
+	 * @param title of the book in string
+	 * @param author of the book in string
 	 * @param length Total number of pages
 	 * @pre title and publisher need to be a single string where different words are separated by underscores only
 	 */
@@ -26,6 +28,7 @@ public class Book extends ItemTemplate{
 	}
 	
 	/**
+	 * returns the total number of pages in the book
 	 * @return the total number of pages in the book
 	 */
 	public String getLength() {
@@ -33,6 +36,7 @@ public class Book extends ItemTemplate{
 	}
 	
 	/**
+	 * returns an availability statement in string
 	 * @return String of the book's title, author, length, and availability
 	 */
 	public String toString() {

@@ -1,9 +1,10 @@
 package items;
 
 /**
- * Represents a DVD. Has a title, publisher, and runtime.
+ * Represents a DVD. inherited all variables from itemTemplate, plus the runtime.
+ * @author James Jian 
  * @author Caden Pun 
- *
+ * @author Harshith Pothula
  */
 public class DVD extends ItemTemplate{
 
@@ -26,6 +27,7 @@ public class DVD extends ItemTemplate{
 	}
 	
 	/**
+	 * returns runtime in the format hh:mm:ss
 	 * @return runtime in the format hh:mm:ss
 	 */
 	public String getRuntime() {
@@ -33,6 +35,7 @@ public class DVD extends ItemTemplate{
 	}
 	
 	/**
+	 * returns String of the book's title, author, length, and availability
 	 * @return String of the book's title, author, length, and availability
 	 */
 	public String toString() {

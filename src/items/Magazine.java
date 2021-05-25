@@ -1,7 +1,9 @@
 package items;
 
 /**
- * Represents a magazine or newspaper. Has an title, publisher, and edition.
+ * Represents a magazine or newspaper. inherited all variables from itemTemplate, plus the edition.
+ * @author James Jian
+ * @author Harshith Pothula
  * @author Caden Pun 
  *
  */
@@ -26,6 +28,7 @@ public class Magazine extends ItemTemplate{
 	}
 	
 	/**
+	 * returns the item's edition in the format mm/yyyy
 	 * @return the item's edition in the format mm/yyyy
 	 */
 	public String getEdition() {
@@ -33,6 +36,7 @@ public class Magazine extends ItemTemplate{
 	}
 	
 	/**
+	 * returns String of the book's title, author, length, and availability
 	 * @return String of the book's title, author, length, and availability
 	 */
 	public String toString() {
