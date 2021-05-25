@@ -8,7 +8,7 @@ import items.ItemTemplate;
  * @author James Jian
  * @author Harshith Pothula
  * @author Caden Pun
- *
+ * @version 5/24
  */
 public class Member {
 

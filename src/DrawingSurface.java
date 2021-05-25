@@ -7,6 +7,12 @@ import libraryObjects.Library;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * This class has all the different screens and switches between them
+ * @author Harshith Pothula
+ * @version 5/24
+ *
+ */
 public class DrawingSurface extends PApplet implements ScreenSwitcher {
 
 	private float ratioX, ratioY;
@@ -109,6 +115,7 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 	}
 	
 	/**
+	 * Switches between screens
 	 * @param i Number of the screen to be switched to
 	 */
 	public void switchScreen(int i) {

@@ -10,7 +10,7 @@ import items.ItemTemplate;
 /**
  * Represents the list of all the Members. Contains all the Members of the library.
  * @author James Jian
- *
+ * @version 5/24
  */
 public class MemberList {
 	
@@ -27,7 +27,7 @@ public class MemberList {
 	
 	/**
 	 * add a member to the member list
-	 * @param member
+	 * @param member Member
 	 */
 	public void addMember (Member member) {
 		members.add(member);
@@ -35,7 +35,7 @@ public class MemberList {
 	
 	/**
 	 * remove a member from the member list
-	 * @param index
+	 * @param index Index of member to be removed
 	 */
 	public void removeMember (int index) {
 		members.remove(index);
@@ -43,9 +43,9 @@ public class MemberList {
 	
 	/**
 	 * verify whether if name and id match, if yes then change id into new ID
-	 * @param ID
-	 * @param name
-	 * @param newID
+	 * @param ID Old ID number
+	 * @param name Name
+	 * @param newID New ID number
 	 */
 	public void changeMemberID (String ID, String name, String newID) {
 		int index = 0;
@@ -74,9 +74,9 @@ public class MemberList {
 	
 	/**
 	 * verify whether if name and id match, if yes then change name into new name
-	 * @param ID
-	 * @param oldName
-	 * @param newName
+	 * @param ID ID number
+	 * @param oldName Old Name
+	 * @param newName New Name
 	 */
 	public void changeMemberName (String ID, String oldName, String newName) {
 		for (int i = 0; i < members.size(); i++) {
@@ -91,9 +91,9 @@ public class MemberList {
 	
 	/**
 	 * Adds a borrowed item to a member
-	 * @param ID
-	 * @param oldName
-	 * @param item
+	 * @param ID ID number
+	 * @param oldName Name of member
+	 * @param item Item being borrowed
 	 * @return A string stating that a member has reached the borrowing limit if they have 10 borrowed items, a String of the items borrowed by the member, an error message is returned if something is wrong
 	 */
 	public String addBorrowedItem (String ID, String oldName, ItemTemplate item) {
@@ -115,9 +115,9 @@ public class MemberList {
 	
 	/**
 	 * Returns an item a member borrowed
-	 * @param ID
-	 * @param name
-	 * @param item
+	 * @param ID ID number
+	 * @param name Name of member
+	 * @param item Item being returned
 	 * @return A string stating that a member did not borrow that item, a String of the items borrowed by the member, an error message is returned if something is wrong
 	 */
 	public String returned (String ID, String name, ItemTemplate item) {
@@ -147,7 +147,7 @@ public class MemberList {
 	
 	/**
 	 * check if this id exists in the member list
-	 * @param id
+	 * @param id ID to be checked in the list
 	 * @return The first member in the member list that matches the given ID
 	 */
 	public Member IDMatch(String id) {

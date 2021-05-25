@@ -11,6 +11,7 @@ import processing.event.MouseEvent;
 /**
  * The surface on which the Library can be accessed (Graphic Interface).
  * @author Harshith Pothula
+ * @version 5/24
  *
  */
 public class DrawingSurfaceLibrary extends Screen {
@@ -24,6 +25,11 @@ public class DrawingSurfaceLibrary extends Screen {
 	private DrawingSurface surface;
 
 	// CONSTRUCTOR - Initialize any added fields here.
+	/**
+	 * Constructor for this class
+	 * @param s DrawingSurface
+	 * @pre s must not be null
+	 */
 	public DrawingSurfaceLibrary(DrawingSurface s) 
 	{
 		super(s.width, s.height);

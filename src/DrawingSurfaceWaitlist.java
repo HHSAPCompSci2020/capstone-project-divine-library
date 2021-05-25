@@ -12,8 +12,9 @@ import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import processing.event.MouseEvent;
 /**
- * Graphical representation of the shelves, has a list of items on these shelves.
+ * Graphical representation of the waitlist.
  * @author Harshith Pothula
+ * @version 5/24
  *
  */
 public class DrawingSurfaceWaitlist extends Screen {
@@ -23,6 +24,13 @@ public class DrawingSurfaceWaitlist extends Screen {
 	private DrawingSurface surface;
 		
 	// CONSTRUCTOR - Initialize any added fields here.
+	/**
+	 * Constructor for this class
+	 * @param itemTemplates a 2D array of itemTemplates
+	 * @param lib The library
+	 * @param s DrawingSurface
+	 * @pre parameters must not be null
+	 */
 	public DrawingSurfaceWaitlist(ItemTemplate[][] itemTemplates, Library lib, DrawingSurface s)
 	{
 		super(s.width,s.height);

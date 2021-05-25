@@ -7,6 +7,7 @@ import members.Member;
  * @author James Jian
  * @author Caden Pun
  * @author Harshith Pothula
+ * @version 5/24
  */
 public class ItemTemplate {
 
@@ -70,7 +71,8 @@ public class ItemTemplate {
 	
 	/**
 	 * Sets availability to the given value
-	 * @param a availability of the item, b a member object
+	 * @param a false if item is being borrowed, true if item is being returned
+	 * @param b Member borrowing/returning the item
 	 */
 	public void setAvailability(boolean a, Member b) {
 		available = a;
@@ -79,7 +81,8 @@ public class ItemTemplate {
 	
 	/**
 	 * Sets waitlist status to the given value
-	 * @param a boolean waitlist status of the item, b a member object
+	 * @param a boolean waitlist status of the item, 
+	 * @param b a member object
 	 */
 	public void setWaitlister(boolean a, Member b) {
 		waitlisted = a;

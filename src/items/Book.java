@@ -5,7 +5,7 @@ package items;
  * @author James Jian
  * @author Harshith Pothula
  * @author Caden Pun 
- *
+ * @version 5/24
  */
 public class Book extends ItemTemplate{
 	

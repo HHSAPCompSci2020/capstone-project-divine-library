@@ -12,7 +12,10 @@ import items.Magazine;
 
 /**
  * Represents a shelf in a Library. Contains Books, DVDs, Magazines. Checks if one of these items has been borrowed or not.
- * @author James Jian, Harshith Pothula, Caden Pun
+ * @author James Jian
+ * @author Harshith Pothula
+ * @author Caden Pun
+ * @version 5/24
  *
  */
 public class Shelf {
@@ -25,6 +28,12 @@ public class Shelf {
 		magazines = new ArrayList<ItemTemplate>();
 	}
 	
+	/**
+	 * Creates shelves with the given books, dvds, and magazines from txt files
+	 * @param bookfile text file containing list of books
+	 * @param dvdfile text file containing list of DVDs
+	 * @param magazinefile text file containing list of magazines & newspapers
+	 */
 	public Shelf(String bookfile, String dvdfile, String magazinefile) {
 		books = new ArrayList<ItemTemplate>();
 		dvds = new ArrayList<ItemTemplate>();

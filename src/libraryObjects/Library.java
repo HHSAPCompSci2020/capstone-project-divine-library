@@ -4,6 +4,7 @@ import members.MemberList;
 /**
  * This represents a Library. It has a MemberList and Shelves.
  * @author James Jian
+ * @version 5/24
  *
  */
 public class Library {
@@ -12,10 +13,10 @@ public class Library {
 	
 	/**
 	 * Creates a Library with the given books, dvds, magazines, and members from txt files
-	 * @param bookfile
-	 * @param dvdfile
-	 * @param magazinefile
-	 * @param memberfile
+	 * @param bookfile text file containing list of books
+	 * @param dvdfile text file containing list of DVDs
+	 * @param magazinefile text file containing list of magazines & newspapers
+	 * @param memberfile text file containing list of members
 	 */
 	public Library (String bookfile, String dvdfile, String magazinefile, String memberfile) {
 		shelf = new Shelf(bookfile, dvdfile, magazinefile);

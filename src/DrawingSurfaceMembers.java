@@ -14,6 +14,7 @@ import processing.event.MouseEvent;
 /**
  * Graphical representation of the Members. Has a list of items.
  * @author Harshith Pothula
+ * @version 5/24
  *
  */
 public class DrawingSurfaceMembers extends Screen {
@@ -22,6 +23,12 @@ public class DrawingSurfaceMembers extends Screen {
 	private DrawingSurface surface;
 		
 	// CONSTRUCTOR - Initialize any added fields here.
+	/**
+	 * Constructor for this class
+	 * @param arrayList An arraylist of members
+	 * @param s DrawingSurface
+	 * @pre parameters must not be null
+	 */
 	public DrawingSurfaceMembers(ArrayList<Member> arrayList, DrawingSurface s) 
 	{
 		super(s.width, s.height);
