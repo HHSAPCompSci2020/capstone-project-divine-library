@@ -34,6 +34,7 @@ public class Member {
 	}
 	
 	/**
+	 * returns String of the Member's name, ID, and items currently borrowed
 	 * @return String of the Member's name, ID, and items currently borrowed
 	 */
 	public String toString() {
@@ -42,6 +43,7 @@ public class Member {
 	}
 
 	/**
+	 * returns a String of the items borrowed by the member
 	 * @return a String of the items borrowed by the member
 	 */
 	public String getList() {
@@ -54,7 +56,8 @@ public class Member {
 	}
 	
 	/**
-	 * @return the borrowed items
+	 * returns the arraylist of the borrowed item
+	 * @return the borrowed items in arraylist
 	 */
 	public ArrayList<ItemTemplate> getArrayList () {
 		return borrowed;
@@ -62,7 +65,7 @@ public class Member {
 	
 	/**
 	 * change the member's id
-	 * @param newID
+	 * @param newID in string
 	 */
 	public void setID (String newID) {
 		ID = newID;
@@ -70,7 +73,7 @@ public class Member {
 	
 	/**
 	 * change the member's name
-	 * @param newName
+	 * @param newName in string
 	 */
 	public void setName (String newName) {
 		name = newName;
@@ -78,7 +81,7 @@ public class Member {
 	
 	/**
 	 * add an item to the member's borrowed list
-	 * @param item
+	 * @param Itemtemplate item wish to add
 	 */
 	public boolean addBorrow (ItemTemplate item) {
 		if (borrowed.size() < 10) {
@@ -90,7 +93,7 @@ public class Member {
 	}
 	/**
 	 * remove an item from the member's borrowed list
-	 * @param item
+	 * @param ItemTemplate item returned
 	 * @return String stating if you successfully returned an item or did not borrow the item
 	 */
 	public String returned (ItemTemplate item) {
@@ -103,7 +106,7 @@ public class Member {
 	}
 	
 	/**
-	 * gives the ID of the member
+	 * returns the ID of the member
 	 * @return the ID of the Member
 	 */
 	public String getID () {
@@ -111,7 +114,7 @@ public class Member {
 	}
 	
 	/**
-	 * gives the name of the member
+	 * returns the name of the member
 	 * @return the name of the Member
 	 */
 	public String getName () {

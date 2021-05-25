@@ -42,35 +42,47 @@ public class MemberList {
 	}
 	
 	/**
-	 * 
+	 * verify whether if name and id match, if yes then change id into new ID
 	 * @param ID
 	 * @param name
 	 * @param newID
 	 */
 	public void changeMemberID (String ID, String name, String newID) {
 		int index = 0;
+		boolean good = true;
+
 		for (Member m : members) {
-			if (m.getID() == ID) {
-				if (name == m.getName()) {
-					Member change = members.get(index);
-					change.setID(newID);
-				}
+			if (m.getID() == newID) {
+				good = false;
+				break;
 			}
+			if (m.getID() == ID) {
+				good = false;
+				break;
+			}
+			if (name == m.getName()) {
+				good = false;
+				break;
+			}
+		}
+		
+		if (good == true) {
+			Member change = members.get(index);
+			change.setID(newID);
 		}
 	}
 	
 	/**
-	 * 
+	 * verify whether if name and id match, if yes then change name into new name
 	 * @param ID
 	 * @param oldName
 	 * @param newName
 	 */
 	public void changeMemberName (String ID, String oldName, String newName) {
-		int index = 0;
-		for (Member m : members) {
-			if (m.getID() == ID) {
-				if (oldName == m.getName()) {
-					Member change = members.get(index);
+		for (int i = 0; i < members.size(); i++) {
+			Member change = members.get(i);
+			if (change.getID() == ID) {
+				if (oldName == change.getName()) {
 					change.setName(newName);
 				}
 			}
@@ -102,17 +114,17 @@ public class MemberList {
 	}
 	
 	/**
-	 * Returns an item
+	 * Returns an item a member borrowed
 	 * @param ID
-	 * @param oldName
+	 * @param name
 	 * @param item
 	 * @return A string stating that a member did not borrow that item, a String of the items borrowed by the member, an error message is returned if something is wrong
 	 */
-	public String returned (String ID, String oldName, ItemTemplate item) {
+	public String returned (String ID, String name, ItemTemplate item) {
 		int index = 0;
 		for (Member m : members) {
 			if (m.getID() == ID) {
-				if (oldName == m.getName()) {
+				if (name == m.getName()) {
 					Member change = members.get(index);
 					if (change.getArrayList().size() > 0 || !change.getArrayList().contains(item)) {
 						return "you did not borrow this item.";  
@@ -126,14 +138,15 @@ public class MemberList {
 	}
 	
 	/**
-	 * @return the Member List
+	 * returns the member list
+	 * @return the Member List in arraylist
 	 */
 	public ArrayList<Member> getMemberList(){
 		return members;
 	}
 	
 	/**
-	 * 
+	 * check if this id exists in the member list
 	 * @param id
 	 * @return The first member in the member list that matches the given ID
 	 */
